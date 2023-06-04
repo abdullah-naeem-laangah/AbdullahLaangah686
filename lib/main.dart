@@ -1,57 +1,29 @@
+import 'package:as_com/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main (){
+import 'ChangeNameCard.dart';
+import 'drawer.dart';
+import 'homepage.dart';
+import 'login_page.dart';
+
+Future main () async{
+  WidgetsFlutterBinding.ensureInitialized();
+  Constants.prefs = SharedPreferences.getInstance() as SharedPreferences;
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: "AS Comuninication",
-    home: HomePage(),
+    home: Constants.prefs.getBool("LoggedIn")== true?HomePage():LoginPage(),
+    theme: ThemeData(
+      primarySwatch: Colors.lime
+    ),
   ));
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-     appBar: AppBar(
-       title: Text("Abdullah"),
-     ),
-      body: Center(
-        child: Container(
-          padding: EdgeInsets.all(8),
-          //color: Colors.teal,
-          width: 100,
-          height: 100,
-          child: Text("abdullah", style: TextStyle(
-            color: Colors.blue,
-            fontSize: 10,
-            fontWeight: FontWeight.bold,
-
-          ),),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            boxShadow:[BoxShadow(
-              color: Colors.grey,
-              blurRadius: 5,
-              offset: Offset(2,0),
-            )],
-            color: Colors.teal,
-            borderRadius: BorderRadius.circular(5),
-            gradient: LinearGradient(colors: [
-              Colors.yellow,Colors.pink,
-            ]
-
-            )
-          ),
-        ),
-      ),
 
 
-    );
-  }
-}
+
 
 
 
