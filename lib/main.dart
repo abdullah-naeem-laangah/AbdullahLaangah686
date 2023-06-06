@@ -1,3 +1,5 @@
+
+
 import 'package:as_com/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
@@ -8,9 +10,9 @@ import 'drawer.dart';
 import 'homepage.dart';
 import 'login_page.dart';
 
-Future main () async{
+ Future main () async{
   WidgetsFlutterBinding.ensureInitialized();
-  Constants.prefs = SharedPreferences.getInstance() as SharedPreferences;
+  Constants.prefs = await SharedPreferences.getInstance() as SharedPreferences;
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: "AS Comuninication",
@@ -18,7 +20,12 @@ Future main () async{
     theme: ThemeData(
       primarySwatch: Colors.lime
     ),
-  ));
+    routes: {
+      "/login":(context)=>LoginPage(),
+      "/home":(context)=>HomePage(),
+    },
+  ),
+  );
 }
 
 

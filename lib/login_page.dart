@@ -50,10 +50,11 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 30,
                     ),
-                    ElevatedButton(onPressed: () {
-                      Navigator.pushReplacementNamed(context, MaterialPageRoute(builder: (context)=> HomePage()) as String);
-                      Constants.prefs.setBool("LoggedInn", true);
-                    }, child: const Text("Sign Inn"))
+                    ElevatedButton(onPressed: ()  {
+                      Constants.prefs.setBool("LoggedIn", true);
+                      Navigator.pushReplacementNamed(context, "/home");
+                    },
+                        child: const Text("Sign Inn"))
                   ],
                 ),
               ),

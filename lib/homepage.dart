@@ -1,3 +1,4 @@
+import 'package:as_com/utils/constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'drawer.dart';
@@ -38,6 +39,13 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Abdullah"),
+        actions: [
+          IconButton(onPressed:(){
+            Constants.prefs.setBool("LoggedIn", false);
+            Navigator.pushReplacementNamed(context, "/login");
+
+          }, icon:Icon(Icons.exit_to_app) )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
