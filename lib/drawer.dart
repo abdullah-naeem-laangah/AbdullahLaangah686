@@ -13,7 +13,7 @@ class MyDrawer extends StatelessWidget {
               accountName: Text("Abdullah Naeem"),
               accountEmail: Text("Abdullah@gmail.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage("https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"),
+                backgroundImage: NetworkImage("https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1lbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"),
               )
           ),
 
