@@ -19,7 +19,6 @@ class _LoginPageState extends State<LoginPage> {
   
   @override
   Widget build(BuildContext context) {
-    final mq = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
@@ -88,22 +87,5 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  // Widget buildButton() {
-  //   return OutlinedButton(
-  //       style: OutlinedButton.styleFrom(
-  //           side: BorderSide(color: Colors.grey),
-  //           elevation: 15.0,
-  //           minimumSize: Size(20, 50),
-  //           primary: Colors.red,
-  //           shape: RoundedRectangleBorder(
-  //               borderRadius: BorderRadius.circular(15))),
-  //       onPressed: () {
-  //         print("Icon Touch");
-  //         Constants.prefs.setBool("LoggedIn", true);
-  //         Navigator.pushReplacementNamed(context, "/home");
-  //       },
-  //       child: const Icon(Icons.arrow_back_ios, color: Colors.white));
-  // }
 }
 
